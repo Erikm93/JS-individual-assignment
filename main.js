@@ -1,5 +1,6 @@
 let postListElement = document.getElementById("posts-list");
 let initialPosts = []; // Array for initial posts
+let newPosts = []; // Array for new posts
 
 function fetchPosts(callback) {
     fetch('https://dummyjson.com/posts')
@@ -40,3 +41,36 @@ fetchPosts(function (posts) {
     renderPosts(posts, postListElement);
 });
 
+
+let addPostBtn = document.getElementById("add-post-btn");
+let newTitleInput = document.getElementById("title");
+let newBodyInput = document.getElementById("body");
+let newTagsInput = document.getElementById("tags");
+
+addPostBtn.addEventListener("click", function () {
+    let newTitle = newTitleInput.value;
+    let newBody = newBodyInput.value;
+    let newTags = newTagsInput.value.split(",").map(tag => tag.trim());
+
+    if (!newTitle || newTitle.trim() === "") {
+        alert("Title required to make a new post");
+        return;
+    }
+
+    let newPost = {
+        title: newTitle,
+        body: newBody,
+        tags: newTags,
+    };
+
+    // Adds the new post to the array
+    newPosts.unshift(newPost); 
+
+    // Clears the input and textarea
+    newTitleInput.value = "";
+    newBodyInput.value = "";
+    newTagsInput.value = "";
+
+    // Combine initialPosts and newPosts
+    renderPosts([...newPosts, ...initialPosts], postListElement);
+});

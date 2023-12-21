@@ -1,3 +1,7 @@
+#text-inputs {
+    margin-left: 3rem;
+}
+
 #title, #tags {
     min-width: 20rem;
 }
