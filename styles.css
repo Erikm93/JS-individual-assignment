@@ -1,0 +1,26 @@
+#title, #tags {
+    min-width: 20rem;
+}
+
+#body {
+    min-width: 28rem;
+    min-height: 8rem;
+}
+
+#posts-list {
+    list-style-type: none;
+}
+
+.post {
+    border: 0.1rem solid black ;
+    max-width: 30rem;  
+}
+
+.post div {
+    margin-bottom: 1rem;
+}
+
+.post {
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
