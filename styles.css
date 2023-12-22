@@ -1,5 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    background-color: #12b820;
+    color: white;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 4.2rem;
+    font-weight: bold;
+}
+
+
 #text-inputs {
-    margin-left: 3rem;
+    margin-top: 1rem;
 }
 
 #title, #tags {
@@ -9,6 +37,11 @@
 #body {
     min-width: 28rem;
     min-height: 8rem;
+    margin: 0.3rem 0 0.3rem 0;
+}
+
+#add-post-btn {
+    margin-top: 0.3rem;
 }
 
 #posts-list {
@@ -17,7 +50,8 @@
 
 .post {
     border: 0.1rem solid black ;
-    max-width: 30rem;  
+    max-width: 35rem;
+    margin: 1rem;
 }
 
 .post div {
@@ -27,4 +61,8 @@
 .post {
     padding-bottom: 0.5rem;
     padding-left: 0.5rem;
+}
+
+h1 {
+    margin: 0.5rem 0 0.5rem 0 ;
 }
