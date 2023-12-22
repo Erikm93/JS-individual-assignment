@@ -29,6 +29,10 @@ function renderPosts(posts, postListElement) {
         title.innerText = post.title;
         body.innerText = post.body;
         tags.innerText = post.tags;
+
+        let tagsContent = post.tags.map(tag => "#" + tag + ", ").join('');
+
+        tags.innerText = tagsContent.slice(0, -2);
         
         article.append(title, body, tags);
         li.append(article);
