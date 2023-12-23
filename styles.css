@@ -49,7 +49,7 @@ body {
 }
 
 .post {
-    border: 0.1rem solid black ;
+    border: 0.1rem solid black;
     max-width: 35rem;
     margin: 1rem;
 }
@@ -64,5 +64,5 @@ body {
 }
 
 h1 {
-    margin: 0.5rem 0 0.5rem 0 ;
+    margin: 0.5rem 0 0.5rem 0;
 }
