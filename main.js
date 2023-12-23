@@ -11,6 +11,7 @@ function fetchPosts(callback) {
         });
 }
 
+// Renders the array of posts
 function renderPosts(posts, postListElement) {
     postListElement.innerText = "";
 
@@ -29,11 +30,12 @@ function renderPosts(posts, postListElement) {
         title.innerText = post.title;
         body.innerText = post.body;
         tags.innerText = post.tags;
-
+        
+        // Format for tags in the post
         let tagsContent = post.tags.map(tag => "#" + tag + ", ").join('');
 
         tags.innerText = tagsContent.slice(0, -2);
-        
+
         article.append(title, body, tags);
         li.append(article);
 
@@ -41,6 +43,7 @@ function renderPosts(posts, postListElement) {
     }
 }
 
+// Fetches and renders the posts
 fetchPosts(function (posts) {
     renderPosts(posts, postListElement);
 });
@@ -51,6 +54,7 @@ let newTitleInput = document.getElementById("title");
 let newBodyInput = document.getElementById("body");
 let newTagsInput = document.getElementById("tags");
 
+// Creates new posts
 addPostBtn.addEventListener("click", function () {
     let newTitle = newTitleInput.value;
     let newBody = newBodyInput.value;
@@ -68,7 +72,7 @@ addPostBtn.addEventListener("click", function () {
     };
 
     // Adds the new post to the array
-    newPosts.unshift(newPost); 
+    newPosts.unshift(newPost);
 
     // Clears the input and textarea
     newTitleInput.value = "";
